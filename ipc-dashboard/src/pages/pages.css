@@ -1,0 +1,191 @@
+/* ========== GLOBAL RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #0e1625;
+  color: #eaf0f7;
+}
+
+/* ========== PAGE CONTAINER ========== */
+.page-container {
+  width: 100%;
+  padding: clamp(20px, 5vw, 45px);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== PAGE TITLE ========== */
+.page-title {
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 700;
+  margin-bottom: 35px;
+  background: linear-gradient(90deg, #00b4ff, #007bff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========== SECTION CARD ========== */
+.section {
+  padding: clamp(18px, 3vw, 30px);
+  border-radius: 18px;
+  margin-bottom: 35px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 35px rgba(0,0,0,0.45);
+  transition: all 0.35s ease;
+}
+
+.section:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ========== SECTION TITLE ========== */
+.section-title {
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #7dd2ff;
+}
+
+/* ========== SECTION CONTENT ========== */
+.section-content {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.88;
+}
+
+/* ========== TABLE WRAPPER (for overflow) ========== */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+/* Scrollbar styling */
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.25);
+  border-radius: 10px;
+}
+
+/* ========== TABLE STYLE ========== */
+.table-style {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+/* PERFECT HEADER ALIGNMENT */
+.table-style thead tr {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  overflow: hidden; 
+}
+
+.table-style th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+.table-style th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+
+.table-style th,
+.table-style td {
+  padding: 14px 20px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Header Text */
+.table-style th {
+  color: #a8dfff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+ 
+}
+
+/* Body Rows */
+.table-style tbody tr {
+  background: rgba(255, 255, 255, 0.08);
+  transition: 0.25s ease;
+}
+
+.table-style tbody tr:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Body Cells */
+.table-style td {
+  font-size: 15px;
+  color: #e8ecf3;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Rounded edges for row shape */
+.table-style tbody tr:first-child td:first-child {
+  border-radius: 12px 0 0 0;
+}
+.table-style tbody tr:first-child td:last-child {
+  border-radius: 0 12px 0 0;
+}
+.table-style tbody tr:last-child td:first-child {
+  border-radius: 0 0 0 12px;
+}
+.table-style tbody tr:last-child td:last-child {
+  border-radius: 0 0 12px 0;
+}
+
+/* ========== RESPONSIVENESS ========== */
+@media (max-width: 992px) {
+  .section {
+    padding: 22px;
+  }
+  .page-title {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 20px;
+  }
+  .table-style th,
+  .table-style td {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-container {
+    padding: 18px;
+  }
+  .section {
+    padding: 16px;
+  }
+  .table-style {
+    min-width: 550px;
+  }
+}
